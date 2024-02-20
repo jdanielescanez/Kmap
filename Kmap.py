@@ -16,20 +16,20 @@ class Minterms(object):
     """ Minterms stores expressions for 1s and "don't care". """
 
     def __init__(
-        self, minterms=None, not_cares=None,
+        self, minterms_str=None, not_cares_str=None,
     ):
         if minterms is None:
             minterms = []
         if not_cares is None:
             not_cares = []
 
-        self.minterms = minterms
-        self.not_cares = not_cares
+        self.minterms = [Term(term) for term in minterms_str]
+        self.not_cares = [Term(term) for term in not_cares_str]
 
     def simplify(self):
         prime_implicants = find_prime_implicants(self.minterms, self.not_cares)
         result = find_essential_prime_implicants(prime_implicants, self.minterms)
-        print(result)
+        return result
 
 
 if __name__ == "__main__":
