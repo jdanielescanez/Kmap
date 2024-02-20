@@ -18,10 +18,10 @@ class Minterms(object):
     def __init__(
         self, minterms_str=None, not_cares_str=None,
     ):
-        if minterms is None:
-            minterms = []
-        if not_cares is None:
-            not_cares = []
+        if minterms_str is None:
+            minterms_str = []
+        if not_cares_str is None:
+            not_cares_str = []
 
         self.minterms = [Term(term) for term in minterms_str]
         self.not_cares = [Term(term) for term in not_cares_str]
