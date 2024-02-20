@@ -5,7 +5,7 @@ This script defines a function to simplify boolean algebra expressions,
 inspired by Karnaugh Map.
 """
 
-from utils import (
+from Kmap.utils import (
     Term,
     find_essential_prime_implicants,
     find_prime_implicants,
